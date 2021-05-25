@@ -15,15 +15,19 @@ public class SoundoneActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstantState);
         setContentView(R.layout.activity_soundone);
+        //Button for start
         Button B1=(Button)findViewById(R.id.start_song_id);
+        //Button for pausing
         Button B2=(Button)findViewById(R.id.pause_song_id);
+        //Button for stoping
         Button B4=(Button)findViewById(R.id.stop_song_id);
+        //MediaPlayer instance is created
        MediaPlayer mp=MediaPlayer.create(this,R.raw.color_black);
         B1.setOnClickListener(new View.OnClickListener() {//START and resume the media player on click
             @Override
             public void onClick(View v) {
                 mp.start();
-                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//on completion process
+                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {//on completion the song it will show "I'm done" process
                     @Override
                     public void onCompletion(MediaPlayer mp) {
                         Toast t1 = Toast.makeText(SoundoneActivity.this, "I'm done", Toast.LENGTH_SHORT);
@@ -44,7 +48,8 @@ public class SoundoneActivity extends AppCompatActivity {
                 mp.stop();
             }
         });
-        TextView tn=(TextView)findViewById(R.id.duration_song_id);//total duration of song
+        //For Representing the total duration of song
+        TextView tn=(TextView)findViewById(R.id.duration_song_id);
         tn.setText(TimeUnit.MILLISECONDS.toMinutes(mp.getDuration())+" min, "+TimeUnit.MILLISECONDS.toSeconds(mp.getDuration())%60+" sec");
     }
 }

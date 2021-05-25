@@ -23,7 +23,7 @@ public class SoundoneActivity extends AppCompatActivity {
         //Button for stoping
         Button B4=(Button)findViewById(R.id.stop_song_id);
         //MediaPlayer instance is created
-        mp=MediaPlayer.create(this,R.raw.color_black);
+        mp=MediaPlayer.create(this,R.raw.raaz);
         B1.setOnClickListener(new View.OnClickListener() {//START and resume the media player on click
             @Override
             public void onClick(View v) {

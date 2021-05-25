@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sound_1!"
+        android:layout_margin="32dp"
+        android:id="@+id/sample_1_id"
+        android:gravity="center"
+        android:background="#ffccaa"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sound_2!"
+        android:id="@+id/sample_2_id"
+        android:layout_margin="32dp"
+        android:gravity="center"
+        android:background="#ffdd66"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seekbar Basic!"
+        android:id="@+id/seekbar_id"
+        android:layout_margin="32dp"
+        android:gravity="center"
+        android:background="#aadd66"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Music Player"
+        android:background="#1bf166"
+        android:layout_margin="32dp"
+        android:id="@+id/music_player_id"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

@@ -58,11 +58,16 @@ public class SoundoneActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         mp.pause();
-        if(mp!=null)
+      /*  if(mp!=null)
         {
             mp.release();
             mp=null;
-        }
+        }*/
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
 }

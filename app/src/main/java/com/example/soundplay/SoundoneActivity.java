@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.concurrent.TimeUnit;
 public class SoundoneActivity extends AppCompatActivity {
+   MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstantState)
     {
@@ -22,7 +23,7 @@ public class SoundoneActivity extends AppCompatActivity {
         //Button for stoping
         Button B4=(Button)findViewById(R.id.stop_song_id);
         //MediaPlayer instance is created
-       MediaPlayer mp=MediaPlayer.create(this,R.raw.color_black);
+        mp=MediaPlayer.create(this,R.raw.color_black);
         B1.setOnClickListener(new View.OnClickListener() {//START and resume the media player on click
             @Override
             public void onClick(View v) {
@@ -52,4 +53,16 @@ public class SoundoneActivity extends AppCompatActivity {
         TextView tn=(TextView)findViewById(R.id.duration_song_id);
         tn.setText(TimeUnit.MILLISECONDS.toMinutes(mp.getDuration())+" min, "+TimeUnit.MILLISECONDS.toSeconds(mp.getDuration())%60+" sec");
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.pause();
+        if(mp!=null)
+        {
+            mp.release();
+            mp=null;
+        }
+    }
+
 }
